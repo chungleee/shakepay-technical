@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [transactions, setTransactions] = useState([]);
   const [currencies, setCurrencies] = useState({});
+
   const getTransactionHistory = async () => {
     const res = await fetch(
       "https://shakepay.github.io/programming-exercise/web/transaction_history.json"
@@ -48,10 +49,20 @@ function App() {
     <div>...loading...</div>
   ) : (
     <Router>
-      <nav>
-        <NavLink to="/cad">CAD</NavLink>
-        <NavLink to="btc">BTC</NavLink>
-        <NavLink to="eth">ETH</NavLink>
+      <nav className="flex justify-center mt3">
+        <NavLink className="link black dim" to="cad" activeClassName="red">
+          CAD
+        </NavLink>
+        <NavLink
+          className="ml3 mr3 link black dim"
+          to="btc"
+          activeClassName="red"
+        >
+          BTC
+        </NavLink>
+        <NavLink className="link black dim" to="eth" activeClassName="red">
+          ETH
+        </NavLink>
       </nav>
 
       <Route
