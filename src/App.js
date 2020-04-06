@@ -50,7 +50,7 @@ function App() {
   ) : (
     <Router>
       <nav className="flex justify-center mt3">
-        <NavLink className="link black dim" to="cad" activeClassName="red">
+        <NavLink className="link black dim" to="/cad" activeClassName="red">
           CAD
         </NavLink>
         <NavLink
@@ -66,18 +66,21 @@ function App() {
       </nav>
 
       <Route
+        exact
         path="/cad"
         render={(props) => {
           return <CAD {...props} data={currencies.CAD} />;
         }}
       />
       <Route
+        exact
         path="/btc"
         render={(props) => {
           return <BTC {...props} data={currencies.BTC} />;
         }}
       />
       <Route
+        exact
         path="/eth"
         render={(props) => {
           return <ETH {...props} data={currencies.ETH} />;
